@@ -8,7 +8,7 @@ class TrainOptions(BaseOptions):
         parser.add_argument('--display_freq', type=int, default=100, help='frequency of showing training results on screen')
         parser.add_argument('--save_latest_freq', type=int, default=1000, help='frequency of saving the latest results')
         parser.add_argument('--save_model_freq', type=int, default=20000, help='frequency of saving checkpoints')
-        parser.add_argument('--batch_size', type=int, default=8, help='input batch size')
+        parser.add_argument('--batch_size', type=int, default=1, help='input batch size') #IT WAS 8 EARLIER.
         parser.add_argument('--capacity', type=int, default=5000, help='capacity for queue in training')
         parser.add_argument('--num_threads', type=int, default=10, help='thread for reading data in training')
         parser.add_argument('--continue_train', action='store_true', help='continue training: load the latest model')

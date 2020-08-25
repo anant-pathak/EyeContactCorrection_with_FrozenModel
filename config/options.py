@@ -10,7 +10,7 @@ class BaseOptions():
     def initialize(self, parser):
 
         parser.add_argument('--data_dir', type=str,
-                            default='../dataset/NewGazeData', help='path to images')
+                            default='/disk/projectEyes/dataSet/NewGazeData', help='path to images')
         parser.add_argument('--pretrain_path', type=str,
                             default='./sg_pre_model_g/', help='pretrained model path')
         parser.add_argument('--inception_path', type=str, default='../pretrained/')
@@ -25,7 +25,7 @@ class BaseOptions():
         parser.add_argument('--n_layers_d', type=int, default=5, help='layers of d model')
         parser.add_argument('--gpu_id', type=str, default='0', help='gpu ids: e.g. 0  0,1,2, 0,2. use -1 for CPU')
         parser.add_argument('--exper_name', type=str, default='log3_25_1', help='name of the experiment. It decides where to store samples and models')
-        parser.add_argument('--checkpoints_dir', type=str, default='./checkpoints', help='models are saved here')
+        parser.add_argument('--checkpoints_dir', type=str, default='/disk/projectEyes/GazeCorrection/log3_25_1/checkpoints_author', help='models are saved here') #changed from ./checkpoints
         parser.add_argument('--log_dir', type=str, default='./logs', help='logs for tensorboard')
         parser.add_argument('--sample_dir', type=str, default='./sample_dir', help='dir for sample images')
         parser.add_argument('--test_sample_dir', type=str, default='test_sample_dir', help='test sample images are saved here')

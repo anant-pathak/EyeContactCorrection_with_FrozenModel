@@ -114,7 +114,8 @@ class Gaze_GAN(object):
             coord = tf.train.Coordinator()
             threads = tf.train.start_queue_runners(sess=sess, coord=coord)
 
-            batch_num = 1000 / self.opt.batch_size
+            #batch_num = 1000 / self.opt.batch_size
+            batch_num = 10 #Have made batch size = 1 to skip generation of 
             for j in range(int(batch_num)):
                 real_test_batch, real_eye_pos = sess.run([testbatch, testmask])
                 batch_masks, batch_left_eye_pos, batch_right_eye_pos = self.get_Mask_and_pos(real_eye_pos)
@@ -122,11 +123,52 @@ class Gaze_GAN(object):
                        self.xm: batch_masks,
                        self.x_left_p: batch_left_eye_pos,
                        self.x_right_p: batch_right_eye_pos}
+                with open('/disk/projectEyes/GazeCorrection/log3_25_1/array_vars/placeholder_1', 'wb') as file1:
+                    np.save(file1, batch_right_eye_pos)
+                with open('/disk/projectEyes/GazeCorrection/log3_25_1/array_vars/placeholder', 'wb') as file1:
+                    np.save(file1, batch_left_eye_pos)
+                with open('/disk/projectEyes/GazeCorrection/log3_25_1/array_vars/placeholder_3', 'wb') as file1:
+                    np.save(file1, batch_masks)
+                with open('/disk/projectEyes/GazeCorrection/log3_25_1/array_vars/placeholder_2', 'wb') as file1:
+                    np.save(file1, real_test_batch)
+                
+                #Loading back the variables from files.
+                # with open('/disk/projectEyes/GazeCorrection/log3_25_1/array_vars/placeholder_1', 'rb') as file1:
+                #     arr_plh1 = np.load(file1)
                 
                 output = sess.run([self.x, self.y], feed_dict=f_d)
                 output_concat = self.Transpose(np.array([output[0], output[1]]))
-                save_images(output_concat, '{}/{:02d}.jpg'.format(self.opt.test_sample_dir, j))
+                #save_images(output_concat, '{}/{:02d}.jpg'.format(self.opt.test_sample_dir, j))
+                output_image = np.reshape(output[1], [256, 256, 3])
+                save_images(output_image, '{}/out{}.jpg'.format("/disk/projectEyes/GazeCorrection/log3_25_1/test_sample_dir", j))
+                save_images(output_concat, '{}/{}.jpg'.format("/disk/projectEyes/GazeCorrection/log3_25_1/test_sample_dir", j))
+             ############################
+            #CREATING A TENSORBOARD BASED FILE FOR VISUALIZATION.
+            ############################
+            from tensorflow.summary import FileWriter
 
+            # tf.train.import_meta_graph("checkpoints/model_100001.ckpt.meta")
+
+            FileWriter("__tb_test", sess.graph)
+            print("\n Graph File written\n")
+            #####################################
+            #Saving pb files: //Anant
+            #####################################
+            from tensorflow.python.tools import freeze_graph
+            #####################################
+            print("\n About to Freeze the graph\n")
+            filename = "saved_model_test"
+            directory = "log3_25_1"
+            pbtxt_filename = filename + '.pbtxt'
+            pbtxt_filepath = os.path.join(directory, pbtxt_filename)
+            pb_filepath = os.path.join(directory, filename + '.pb')
+            tf.train.write_graph(graph_or_graph_def=sess.graph_def, logdir=directory, name=pbtxt_filename, as_text=True)
+
+            #freeze_graph.freeze_graph(input_graph=pbtxt_filepath, input_saver='', input_binary=False, input_checkpoint=tf.train.latest_checkpoint(self.opt.checkpoints_dir), output_node_names='add', restore_op_name='save/restore_all', filename_tensor_name='save/Const:0', output_graph=pb_filepath, clear_devices=True, initializer_nodes='')
+
+            from tensorflow.python.framework import graph_io
+            frozen = tf.graph_util.convert_variables_to_constants(sess, sess.graph_def, ["add"])
+            graph_io.write_graph(frozen, './log3_25_1/', 'inference_graph_3_batch1.pb', as_text=False)
             coord.request_stop()
             coord.join(threads)
 
@@ -244,12 +286,42 @@ class Gaze_GAN(object):
                 step += 1
 
             save_path = self.saver.save(sess, os.path.join(self.opt.checkpoints_dir, 'model_{:06d}.ckpt'.format(step)))
+
+            ############################
+            #CREATING A TENSORBOARD BASED FILE FOR VISUALIZATION.
+            ############################
+            from tensorflow.summary import FileWriter
+
+            # tf.train.import_meta_graph("checkpoints/model_100001.ckpt.meta")
+
+            FileWriter("__tb", sess.graph)
+            print("\n Graph File written\n")
+            #####################################
+            #Saving pb files: //Anant
+            #####################################
+            from tensorflow.python.tools import freeze_graph
+            #####################################
+            print("\n About to Freeze the graph\n")
+            filename = "saved_model"
+            directory = "log3_25_1"
+            pbtxt_filename = filename + '.pbtxt'
+            pbtxt_filepath = os.path.join(directory, pbtxt_filename)
+            pb_filepath = os.path.join(directory, filename + '.pb')
+            # This will only save the graph but the variables will not be saved.
+            # You have to freeze your model first.
+            tf.train.write_graph(graph_or_graph_def=sess.graph_def, logdir=directory, name=pbtxt_filename, as_text=True)
+
+            # Freeze graph
+            # Method 1
+            # freeze_graph.freeze_graph(input_graph=pbtxt_filepath, input_saver='', input_binary=False, input_checkpoint=save_path, output_node_names='y', restore_op_name='save/restore_all', filename_tensor_name='save/Const:0', output_graph=pb_filepath, clear_devices=True, initializer_nodes='')
+            print("\n Graph frozen\n")
             #summary_writer.close()
 
             coord.request_stop()
             coord.join(threads)
 
-            print("Model saved in file: %s" % save_path)
+            print("Model saved in file: %s \n" % save_path)
+            print("Saved_model saved in File: %s" % pb_filepath)
 
     def Transpose(self, list):
 
