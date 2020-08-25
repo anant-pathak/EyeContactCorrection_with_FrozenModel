@@ -132,9 +132,9 @@ class Gaze_GAN(object):
                 with open('/disk/projectEyes/GazeCorrection/log3_25_1/array_vars/placeholder_2', 'wb') as file1:
                     np.save(file1, real_test_batch)
                 
-                #Loading back the variables from files.
-                # with open('/disk/projectEyes/GazeCorrection/log3_25_1/array_vars/placeholder_1', 'rb') as file1:
-                #     arr_plh1 = np.load(file1)
+                Loading back the variables from files.
+                with open('/disk/projectEyes/GazeCorrection/log3_25_1/array_vars/placeholder_2', 'rb') as file1:
+                    arr_plh1 = np.load(file1)
                 
                 output = sess.run([self.x, self.y], feed_dict=f_d)
                 output_concat = self.Transpose(np.array([output[0], output[1]]))
