@@ -14,6 +14,7 @@ class Dataset(object):
         self.dataset_name = 'NewGazeData'
         self.attr_0_txt = 'eye_train.txt'
         self.attr_1_txt = 'eye_test.txt'
+        self.attr_2_txt = 'custom_eye_test.txt'
         self.height, self.width= config.img_size, config.img_size
         self.channel = config.output_nc
         self.capacity = config.capacity
@@ -21,6 +22,7 @@ class Dataset(object):
         self.num_threads = config.num_threads
 
         self.train_images_list, self.train_eye_pos, self.test_images_list, self.test_eye_pos, self.test_num = self.readfilenames()
+        self.custom_test_images_list, self.custom_test_eye_pos, self.custom_test_num = self.readCustomfilenames() 
 
     def readfilenames(self):
 
@@ -39,7 +41,7 @@ class Dataset(object):
 
         fh.close()
 
-        fh = open(os.path.join(self.data_dir, self.attr_0_txt))
+        fh = open(os.path.join(self.data_dir, self.attr_1_txt))  #it was attr_0_txt before for testing. 
         test_images_list = []
         test_eye_pos = []
 
@@ -54,7 +56,28 @@ class Dataset(object):
                 #print test_eye_pos
 
         fh.close()
+        print(len(test_images_list))
         return train_images_list, train_eye_pos, test_images_list, test_eye_pos, len(test_images_list)
+
+    def readCustomfilenames(self):
+        fh = open(os.path.join(self.data_dir, self.attr_2_txt))
+        test_images_list = []
+        test_eye_pos = []
+
+        for f in fh.readlines():
+            eye_pos = []
+            f = f.strip('\n')
+            filenames = f.split(' ', 5)
+            if os.path.exists(os.path.join(self.data_dir, "custom/"+filenames[0]+".jpg")):
+                test_images_list.append(os.path.join(self.data_dir,"custom/"+filenames[0]+".jpg"))
+                eye_pos.extend([int(value) for value in filenames[1:5]])
+                test_eye_pos.append(eye_pos)
+                #print test_eye_pos
+
+        fh.close()
+        return test_images_list, test_eye_pos, len(test_images_list)
+
+
 
     def read_images(self, input_queue):
 
@@ -93,3 +116,19 @@ class Dataset(object):
                                                 )
 
         return batch_path, batch_image1, batch_eye_pos1, batch_image2, batch_eye_pos2
+
+    def custom_test_input(self):
+        test_images = tf.convert_to_tensor(self.custom_test_images_list, dtype=tf.string)
+        test_eye_pos = tf.convert_to_tensor(self.custom_test_eye_pos, dtype=tf.int32)
+        test_queue = tf.train.slice_input_producer([test_images, test_eye_pos], shuffle=False)
+        test_eye_pos_queue = test_queue[1]
+        test_images_queue = self.read_images(input_queue=test_queue[0])
+
+        batch_image2, batch_eye_pos2 = tf.train.batch([test_images_queue, test_eye_pos_queue],
+                                                batch_size=self.batch_size,
+                                                capacity=500,
+                                                num_threads=1
+                                                )
+        return batch_image2, batch_eye_pos2
+
+
