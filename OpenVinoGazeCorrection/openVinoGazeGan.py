@@ -51,7 +51,7 @@ def build_argparser():
     return parser
 
 
-def main(dataset, opt, save_images=True):
+def main(dataset, opt, num_custom_images, save_images=True, custom_dataset = True):
     # log.basicConfig(format="[ %(levelname)s ] %(message)s", level=log.INFO, stream=sys.stdout)
     args = build_argparser().parse_args(["--model", "/disk/projectEyes/GazeCorrection/OpenVinoGazeCorrection/inference_graph_batch1/inference_graph_3_batch1.xml", "--input", "/disk/projectEyes/dataSet/NewGazeData/0"])
     model_xml = args.model
@@ -137,13 +137,17 @@ def main(dataset, opt, save_images=True):
 
     with tf.Session(config=config) as sess:
         sess.run(init)
-        _,_,_, testbatch, testmask = dataset.input()
+        #_,_,_, testbatch, testmask = dataset.input()
         #testbatch, testmask = self.dataset.custom_test_input()
+        if custom_dataset == True:  
+            batch_num = num_custom_images 
+            testbatch, testmask = dataset.custom_test_input()
+        else: 
+            batch_num = 3451 / opt.batch_size #Have made batch size = 1
+            _,_,_, testbatch, testmask = dataset.input()
+
         coord = tf.train.Coordinator()
         threads = tf.train.start_queue_runners(sess=sess, coord=coord)
-
-        batch_num = 3451 / opt.batch_size
-        # batch_num = 13 #Have made batch size = 1 to skip generation of 
         #################################
         # STARTING TIMING 
         ##################################
@@ -161,26 +165,26 @@ def main(dataset, opt, save_images=True):
             # res = exec_net.infer(inputs={input_blob: images})
             res = exec_net.infer(inputs={'Placeholder': batch_left_eye_pos, 'Placeholder_1': batch_right_eye_pos, 'Placeholder_2' : real_test_batch_transposed, 'Placeholder_3' : batch_masks})
             if save_images == True:
-                if j % 100 == 0 : #Considering the batch_num is 0 #IF IMAGES ARE NEEDED TO BE SAVED PERIODICALLY, tab THE CODE BELOW.
-                    ######################
-                    # IF ONLY RESULTANT IMAGE NEEDS TO BE SAVED W/O CONCATINATION: 
-                    # -ANANT
-                    ######################
-                    # res_transposed = np.transpose(np.array(res['add']), axes=[0,2,3,1])
-                    # output_image = np.reshape(res_transposed, [256, 256, 3])
-                    # imageio.imwrite(image_path, output_image)
+                #if j % 100 == 0 : #Considering the batch_num is 0 #IF IMAGES ARE NEEDED TO BE SAVED PERIODICALLY, tab THE CODE BELOW.
+                ######################
+                # IF ONLY RESULTANT IMAGE NEEDS TO BE SAVED W/O CONCATINATION: 
+                # -ANANT
+                ######################
+                # res_transposed = np.transpose(np.array(res['add']), axes=[0,2,3,1])
+                # output_image = np.reshape(res_transposed, [256, 256, 3])
+                # imageio.imwrite(image_path, output_image)
 
-                    ######################
-                    # IF CONCAT OF INPUT + OUTPUT NEEDS TO BE SAVED:
-                    # - ANANT
-                    ######################            
-                    res_transposed = np.transpose(np.array(res['add']), axes=[0,2,3,1])
-                    output_concat = Transpose([real_test_batch, res_transposed])
-                    image_path = '{}/{:02d}.jpg'.format("/disk/projectEyes/GazeCorrection/OpenVinoGazeCorrection/outputTestImages", j)
-                    import imageio
-                    imageio.imwrite(image_path, output_concat)
-                    # save_images(output_image, '{}/out_1st.jpg'.format("/disk/nGraph/openvino/inference-engine/ie_bridges/python/sample/classification_sample/output"))
-                    print('DONE')
+                ######################
+                # IF CONCAT OF INPUT + OUTPUT NEEDS TO BE SAVED:
+                # - ANANT
+                ######################            
+                res_transposed = np.transpose(np.array(res['add']), axes=[0,2,3,1])
+                output_concat = Transpose([real_test_batch, res_transposed])
+                image_path = '{}/{:02d}.jpg'.format("/disk/projectEyes/GazeCorrection/OpenVinoGazeCorrection/outputTestImages", j)
+                import imageio
+                imageio.imwrite(image_path, output_concat)
+                # save_images(output_image, '{}/out_1st.jpg'.format("/disk/nGraph/openvino/inference-engine/ie_bridges/python/sample/classification_sample/output"))
+                print('DONE')
         #################################
         # ENDING TIMING 
         ##################################

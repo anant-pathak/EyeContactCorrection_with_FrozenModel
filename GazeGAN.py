@@ -93,7 +93,7 @@ class Gaze_GAN(object):
                 tf.image.crop_and_resize(input, boxes=boxes_right, box_ind=list(range(0, shape[0])),
                                     crop_size=[int(shape[-3] / 2), int(shape[-2] / 2)])
 
-    def test(self, freeze_model, flag_save_images=True):
+    def test(self, freeze_model, num_custom_images, flag_save_images=True, custom_dataset = True):
 
         init = tf.global_variables_initializer()
         config = tf.ConfigProto()
@@ -111,13 +111,20 @@ class Gaze_GAN(object):
                 print('Do not exists any checkpoint,Load Failed!')
                 exit()
 
+            if custom_dataset == True:
+                batch_num = num_custom_images 
+                testbatch, testmask = self.dataset.custom_test_input()
+            else: 
+                batch_num = 3451 / self.opt.batch_size #Have made batch size = 1
+                _,_,_, testbatch, testmask = self.dataset.input()
             #_,_,_, testbatch, testmask = self.dataset.input()
-            testbatch, testmask = self.dataset.custom_test_input()
+            #testbatch, testmask = self.dataset.custom_test_input()
             coord = tf.train.Coordinator()
             threads = tf.train.start_queue_runners(sess=sess, coord=coord)
 
-            #batch_num = 3451 / self.opt.batch_size
-            batch_num = 10 #Have made batch size = 1 to skip generation of 
+            
+            
+            
             #################################
             # STARTING TIMING 
             ##################################
