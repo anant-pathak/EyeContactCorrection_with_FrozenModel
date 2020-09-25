@@ -2,6 +2,21 @@
 # V2 version can be found in [GazeAnimation](https://github.com/zhangqianhui/GazeAnimation)
 The code of paper [GazeCorrection:Self-Guided Eye Manipulation in the wild using Self-Supervised Generative Adversarial Networks](https://arxiv.org/abs/1906.00805). 
 
+Gaze-correction model with TF and OpenVino that perform testing on the celebDataset.
+1)	Clone the repo: https://github.com/anantthebiker/EyeContactCorrection_with_FrozenModel 
+2)	Download the celebA dataset from: https://drive.google.com/file/d/1lYzpKdShN68RJGxRF1JgXnW-ved0F-mJ/view 
+3)	And set its path in config/“options.py”
+4)	Inside of “dataSet” folder, create a folder “custom” and a file: “custom_eye_test.txt” where you add your custom images(after processing through faccropper) and “name of custom images + coordinates of left and right eyes”. E.g.:
+anant4 90 104 187 104 
+anant6 76 60 203 59
+5)	In “EyeContactCorrection_with_FrozenModel/log3_25_1/” extract the .zip file there itself as a folder, so you’d have checkpoints file in  “EyeContactCorrection_with_FrozenModel/log3_25_1/checkpoints_author”. 
+6) Modify hardcoded paths saved in config/ or other files.
+7)	Run the test.py
+
+\
+ORIGINAL README OF THE AUTHOR: 
+
+
 <p align="center">
   <img src='img/1.jpg' />
   <img src='img/2.jpg' />
