@@ -1,0 +1,975 @@
+<?xml version="1.0" ?>
+<mapping>
+	<map>
+		<framework name="encode/e_in2/moments/variance" out_port_id="0"/>
+		<IR id="189" name="encode/e_in2/moments/variance" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN_2/moments/SquaredDifference" out_port_id="0"/>
+		<IR id="407" name="G/IN_2/moments/SquaredDifference" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_in2/mul" out_port_id="0"/>
+		<IR id="294" name="encode_1/e_in2/mul" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN_0/add_1" out_port_id="0"/>
+		<IR id="375" name="G/IN_0/add_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_c1/Reshape" out_port_id="0"/>
+		<IR id="264" name="encode_1/e_c1/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/Reshape_1" out_port_id="0"/>
+		<IR id="355" name="G/Reshape_1/Transpose" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_in1/Rsqrt" out_port_id="0"/>
+		<IR id="274" name="encode_1/e_in1/Rsqrt/pow_" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/Reshape" out_port_id="0"/>
+		<IR id="140" name="G/Reshape" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN4/moments/SquaredDifference" out_port_id="0"/>
+		<IR id="124" name="G/IN4/moments/SquaredDifference" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/FC1/add" out_port_id="0"/>
+		<IR id="144" name="G/FC1/add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/deconv4/truediv" out_port_id="0"/>
+		<IR id="441" name="G/deconv4/truediv/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_in3/add_1" out_port_id="0"/>
+		<IR id="316" name="encode_1/e_in3/add_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_in4/mul" out_port_id="0"/>
+		<IR id="332" name="encode_1/e_in4/mul" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_c3/Reshape" out_port_id="0"/>
+		<IR id="302" name="encode_1/e_c3/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN0/mul_1" out_port_id="0"/>
+		<IR id="52" name="G/IN0/mul_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/Reshape" out_port_id="0"/>
+		<IR id="340" name="encode_1/Reshape" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_in1/moments/SquaredDifference" out_port_id="0"/>
+		<IR id="168" name="encode/e_in1/moments/SquaredDifference" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN1/mul_1" out_port_id="0"/>
+		<IR id="72" name="G/IN1/mul_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_c3/w/read" out_port_id="0"/>
+		<IR id="299" name="Copy_encode/e_c3/w/read/Output_0/Data_2015_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="G/IN4/add_1" out_port_id="0"/>
+		<IR id="134" name="G/IN4/add_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN_4/mul_1" out_port_id="0"/>
+		<IR id="457" name="G/IN_4/mul_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/LeakyReLU_1/Maximum" out_port_id="0"/>
+		<IR id="56" name="LeakyReLU_10015" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN_3/moments/variance" out_port_id="0"/>
+		<IR id="430" name="G/IN_3/moments/variance" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/output_conv/w/read" out_port_id="0"/>
+		<IR id="461" name="G/output_conv/w/read/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="G/IN_1/mul" out_port_id="0"/>
+		<IR id="393" name="G/IN_1/mul" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/conv3/w/read" out_port_id="0"/>
+		<IR id="97" name="G/conv3/w/read/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="G/deconv0/conv2d_transpose" out_port_id="0"/>
+		<IR id="359" name="G/deconv0/conv2d_transpose" out_port_id="3"/>
+	</map>
+	<map>
+		<framework name="sub" out_port_id="0"/>
+		<IR id="3" name="sub/sub" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_in1/mul" out_port_id="0"/>
+		<IR id="275" name="encode_1/e_in1/mul" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN_4/moments/SquaredDifference" out_port_id="0"/>
+		<IR id="449" name="G/IN_4/moments/SquaredDifference" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN_4/sub" out_port_id="0"/>
+		<IR id="448" name="G/IN_4/sub/sub" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN2/mul" out_port_id="0"/>
+		<IR id="91" name="G/IN2/mul" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_in4/mul_1" out_port_id="0"/>
+		<IR id="233" name="encode/e_in4/mul_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/deconv2/truediv" out_port_id="0"/>
+		<IR id="399" name="G/deconv2/truediv/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="G/IN2/add_1" out_port_id="0"/>
+		<IR id="94" name="G/IN2/add_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/FC2/Matrix/read" out_port_id="0"/>
+		<IR id="346" name="G/FC2/MatMul/1_port_transpose11816_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="G/IN_3/sub" out_port_id="0"/>
+		<IR id="427" name="G/IN_3/sub/sub" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_in2/sub" out_port_id="0"/>
+		<IR id="186" name="encode/e_in2/sub/sub" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/deconv0/Reshape_1" out_port_id="0"/>
+		<IR id="361" name="G/deconv0/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_c2/Conv2D" out_port_id="0"/>
+		<IR id="181" name="encode/e_c2/Conv2D" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN1/sub" out_port_id="0"/>
+		<IR id="63" name="G/IN1/sub/sub" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/Relu_3" out_port_id="0"/>
+		<IR id="439" name="G/Relu_3" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="mul_1" out_port_id="0"/>
+		<IR id="466" name="mul_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/FC2/MatMul" out_port_id="0"/>
+		<IR id="347" name="G/FC2/MatMul" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_c2/w/read" out_port_id="0"/>
+		<IR id="180" name="Copy_encode/e_c2/w/read/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="G/output_conv/Conv2D" out_port_id="0"/>
+		<IR id="462" name="G/output_conv/Conv2D" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN_2/Rsqrt" out_port_id="0"/>
+		<IR id="413" name="G/IN_2/Rsqrt/pow_" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_in1/sub" out_port_id="0"/>
+		<IR id="167" name="encode/e_in1/sub/sub" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN/mul" out_port_id="0"/>
+		<IR id="31" name="G/IN/mul" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/conv2/w/read" out_port_id="0"/>
+		<IR id="77" name="G/conv2/w/read/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="encode/e_in3/sub" out_port_id="0"/>
+		<IR id="205" name="encode/e_in3/sub/sub" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN/Rsqrt" out_port_id="0"/>
+		<IR id="30" name="G/IN/Rsqrt/pow_" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN0/Rsqrt" out_port_id="0"/>
+		<IR id="50" name="G/IN0/Rsqrt/pow_" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN1/Rsqrt" out_port_id="0"/>
+		<IR id="70" name="G/IN1/Rsqrt/pow_" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN/moments/SquaredDifference" out_port_id="0"/>
+		<IR id="24" name="G/IN/moments/SquaredDifference" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/concat" out_port_id="0"/>
+		<IR id="16" name="G/concat" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/concat_1" out_port_id="0"/>
+		<IR id="345" name="G/concat_1" out_port_id="3"/>
+	</map>
+	<map>
+		<framework name="G/Relu_4" out_port_id="0"/>
+		<IR id="460" name="G/Relu_4" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="encode/e_c3/w/read" out_port_id="0"/>
+		<IR id="199" name="Copy_encode/e_c3/w/read/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="G/conv4/Conv2D" out_port_id="0"/>
+		<IR id="118" name="G/conv4/Conv2D" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/Relu_2" out_port_id="0"/>
+		<IR id="217" name="encode/Relu_2" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="G/conv3/Reshape" out_port_id="0"/>
+		<IR id="100" name="G/conv3/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="CropAndResize_1" out_port_id="0"/>
+		<IR id="260" name="CropAndResize_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/Relu_3" out_port_id="0"/>
+		<IR id="238" name="encode/Relu_3/Transpose" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN_3/moments/SquaredDifference" out_port_id="0"/>
+		<IR id="428" name="G/IN_3/moments/SquaredDifference" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_in3/mul" out_port_id="0"/>
+		<IR id="213" name="encode/e_in3/mul" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN/add_1" out_port_id="0"/>
+		<IR id="34" name="G/IN/add_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/deconv1/conv2d_transpose" out_port_id="0"/>
+		<IR id="380" name="G/deconv1/conv2d_transpose" out_port_id="3"/>
+	</map>
+	<map>
+		<framework name="G/IN4/Rsqrt" out_port_id="0"/>
+		<IR id="130" name="G/IN4/Rsqrt/pow_" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_in3/moments/SquaredDifference" out_port_id="0"/>
+		<IR id="206" name="encode/e_in3/moments/SquaredDifference" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN2/Rsqrt" out_port_id="0"/>
+		<IR id="90" name="G/IN2/Rsqrt/pow_" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/LeakyReLU_2/Maximum" out_port_id="0"/>
+		<IR id="76" name="LeakyReLU_10020" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/conv3/Conv2D" out_port_id="0"/>
+		<IR id="98" name="G/conv3/Conv2D" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN4/sub" out_port_id="0"/>
+		<IR id="123" name="G/IN4/sub/sub" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_in3/Rsqrt" out_port_id="0"/>
+		<IR id="312" name="encode_1/e_in3/Rsqrt/pow_" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN_1/moments/variance" out_port_id="0"/>
+		<IR id="388" name="G/IN_1/moments/variance" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN/moments/variance" out_port_id="0"/>
+		<IR id="26" name="G/IN/moments/variance" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN3/moments/variance" out_port_id="0"/>
+		<IR id="106" name="G/IN3/moments/variance" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_c2/Conv2D" out_port_id="0"/>
+		<IR id="281" name="encode_1/e_c2/Conv2D" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/Relu" out_port_id="0"/>
+		<IR id="279" name="encode_1/Relu" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="add" out_port_id="0"/>
+		<IR id="467" name="add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/deconv1/truediv" out_port_id="0"/>
+		<IR id="378" name="G/deconv1/truediv/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="encode/e_in2/Rsqrt" out_port_id="0"/>
+		<IR id="193" name="encode/e_in2/Rsqrt/pow_" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_in2/moments/SquaredDifference" out_port_id="0"/>
+		<IR id="287" name="encode_1/e_in2/moments/SquaredDifference" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_in2/add_1" out_port_id="0"/>
+		<IR id="297" name="encode_1/e_in2/add_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN_0/moments/SquaredDifference" out_port_id="0"/>
+		<IR id="365" name="G/IN_0/moments/SquaredDifference" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_in3/add_1" out_port_id="0"/>
+		<IR id="216" name="encode/e_in3/add_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/Relu_1" out_port_id="0"/>
+		<IR id="397" name="G/Relu_1" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="encode/e_c4/w/read" out_port_id="0"/>
+		<IR id="318" name="Copy_encode/e_c4/w/read/Output_0/Data_2023_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_in1/sub" out_port_id="0"/>
+		<IR id="267" name="encode_1/e_in1/sub/sub" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/LeakyReLU_5/Maximum" out_port_id="0"/>
+		<IR id="138" name="LeakyReLU_10019/Transpose" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN_3/mul" out_port_id="0"/>
+		<IR id="435" name="G/IN_3/mul" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="Placeholder_2" out_port_id="0"/>
+		<IR id="0" name="Placeholder_2" out_port_id="0"/>
+	</map>
+	<map>
+		<framework name="G/conv1/Conv2D" out_port_id="0"/>
+		<IR id="58" name="G/conv1/Conv2D" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_in3/moments/variance" out_port_id="0"/>
+		<IR id="208" name="encode/e_in3/moments/variance" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_in1/add_1" out_port_id="0"/>
+		<IR id="278" name="encode_1/e_in1/add_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_in4/moments/SquaredDifference" out_port_id="0"/>
+		<IR id="225" name="encode/e_in4/moments/SquaredDifference" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN0/mul" out_port_id="0"/>
+		<IR id="51" name="G/IN0/mul" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN_2/sub" out_port_id="0"/>
+		<IR id="406" name="G/IN_2/sub/sub" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_c1/Conv2D" out_port_id="0"/>
+		<IR id="262" name="encode_1/e_c1/Conv2D" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_in1/mul_1" out_port_id="0"/>
+		<IR id="276" name="encode_1/e_in1/mul_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN2/moments/variance" out_port_id="0"/>
+		<IR id="86" name="G/IN2/moments/variance" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/Reshape" out_port_id="0"/>
+		<IR id="240" name="encode/Reshape" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/conv1/Reshape" out_port_id="0"/>
+		<IR id="60" name="G/conv1/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_in1/moments/variance" out_port_id="0"/>
+		<IR id="170" name="encode/e_in1/moments/variance" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/deconv3/conv2d_transpose" out_port_id="0"/>
+		<IR id="422" name="G/deconv3/conv2d_transpose" out_port_id="3"/>
+	</map>
+	<map>
+		<framework name="G/LeakyReLU_4/Maximum" out_port_id="0"/>
+		<IR id="116" name="LeakyReLU_" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/FC1/Matrix/read" out_port_id="0"/>
+		<IR id="141" name="G/FC1/MatMul/1_port_transpose11820_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_in3/mul_1" out_port_id="0"/>
+		<IR id="314" name="encode_1/e_in3/mul_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_c2/Reshape" out_port_id="0"/>
+		<IR id="283" name="encode_1/e_c2/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_in2/mul_1" out_port_id="0"/>
+		<IR id="295" name="encode_1/e_in2/mul_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_c2/w/read" out_port_id="0"/>
+		<IR id="280" name="Copy_encode/e_c2/w/read/Output_0/Data_2007_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="G/IN_2/moments/variance" out_port_id="0"/>
+		<IR id="409" name="G/IN_2/moments/variance" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/conv0/Conv2D" out_port_id="0"/>
+		<IR id="38" name="G/conv0/Conv2D" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_in1/mul" out_port_id="0"/>
+		<IR id="175" name="encode/e_in1/mul" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_in1/moments/variance" out_port_id="0"/>
+		<IR id="270" name="encode_1/e_in1/moments/variance" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN1/moments/variance" out_port_id="0"/>
+		<IR id="66" name="G/IN1/moments/variance" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/conv4/w/read" out_port_id="0"/>
+		<IR id="117" name="G/conv4/w/read/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="G/IN0/moments/SquaredDifference" out_port_id="0"/>
+		<IR id="44" name="G/IN0/moments/SquaredDifference" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN1/moments/SquaredDifference" out_port_id="0"/>
+		<IR id="64" name="G/IN1/moments/SquaredDifference" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_ful1/Matrix/read" out_port_id="0"/>
+		<IR id="241" name="encode/e_ful1/MatMul/1_port_transpose11812_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="G/IN3/mul_1" out_port_id="0"/>
+		<IR id="112" name="G/IN3/mul_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/Reshape/shape" out_port_id="0"/>
+		<IR id="339" name="encode_1/Reshape/Cast_115804_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="encode/e_in2/mul" out_port_id="0"/>
+		<IR id="194" name="encode/e_in2/mul" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_c3/Conv2D" out_port_id="0"/>
+		<IR id="300" name="encode_1/e_c3/Conv2D" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN0/add_1" out_port_id="0"/>
+		<IR id="54" name="G/IN0/add_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/FC2/add" out_port_id="0"/>
+		<IR id="349" name="G/FC2/add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN_2/mul_1" out_port_id="0"/>
+		<IR id="415" name="G/IN_2/mul_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_in4/moments/variance" out_port_id="0"/>
+		<IR id="227" name="encode/e_in4/moments/variance" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/Relu_1" out_port_id="0"/>
+		<IR id="298" name="encode_1/Relu_1" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="G/IN/mul_1" out_port_id="0"/>
+		<IR id="32" name="G/IN/mul_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_in1/add_1" out_port_id="0"/>
+		<IR id="178" name="encode/e_in1/add_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_in3/mul_1" out_port_id="0"/>
+		<IR id="214" name="encode/e_in3/mul_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/deconv2/Reshape_1" out_port_id="0"/>
+		<IR id="403" name="G/deconv2/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/Relu_2" out_port_id="0"/>
+		<IR id="418" name="G/Relu_2" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="G/conv0/Reshape" out_port_id="0"/>
+		<IR id="40" name="G/conv0/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_c4/Conv2D" out_port_id="0"/>
+		<IR id="319" name="encode_1/e_c4/Conv2D" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_in3/moments/variance" out_port_id="0"/>
+		<IR id="308" name="encode_1/e_in3/moments/variance" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/Reshape/shape" out_port_id="0"/>
+		<IR id="139" name="G/Reshape/Cast_115738_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="G/IN_1/moments/SquaredDifference" out_port_id="0"/>
+		<IR id="386" name="G/IN_1/moments/SquaredDifference" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="CropAndResize" out_port_id="0"/>
+		<IR id="160" name="CropAndResize" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/deconv0/truediv" out_port_id="0"/>
+		<IR id="357" name="G/deconv0/truediv/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="encode/e_c3/Conv2D" out_port_id="0"/>
+		<IR id="200" name="encode/e_c3/Conv2D" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/conv0/w/read" out_port_id="0"/>
+		<IR id="37" name="G/conv0/w/read/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="encode/e_c4/Reshape" out_port_id="0"/>
+		<IR id="221" name="encode/e_c4/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN_2/mul" out_port_id="0"/>
+		<IR id="414" name="G/IN_2/mul" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN0/sub" out_port_id="0"/>
+		<IR id="43" name="G/IN0/sub/sub" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN3/Rsqrt" out_port_id="0"/>
+		<IR id="110" name="G/IN3/Rsqrt/pow_" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN_0/Rsqrt" out_port_id="0"/>
+		<IR id="371" name="G/IN_0/Rsqrt/pow_" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN_2/add_1" out_port_id="0"/>
+		<IR id="417" name="G/IN_2/add_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN3/add_1" out_port_id="0"/>
+		<IR id="114" name="G/IN3/add_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_c1/Conv2D" out_port_id="0"/>
+		<IR id="162" name="encode/e_c1/Conv2D" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN_4/mul" out_port_id="0"/>
+		<IR id="456" name="G/IN_4/mul" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/Relu" out_port_id="0"/>
+		<IR id="376" name="G/Relu" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="encode/e_in4/Rsqrt" out_port_id="0"/>
+		<IR id="231" name="encode/e_in4/Rsqrt/pow_" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/deconv4/conv2d_transpose" out_port_id="0"/>
+		<IR id="443" name="G/deconv4/conv2d_transpose" out_port_id="3"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_in4/Rsqrt" out_port_id="0"/>
+		<IR id="331" name="encode_1/e_in4/Rsqrt/pow_" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN_3/mul_1" out_port_id="0"/>
+		<IR id="436" name="G/IN_3/mul_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_in4/add_1" out_port_id="0"/>
+		<IR id="235" name="encode/e_in4/add_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_ful1/MatMul" out_port_id="0"/>
+		<IR id="342" name="encode_1/e_ful1/MatMul" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN_4/Rsqrt" out_port_id="0"/>
+		<IR id="455" name="G/IN_4/Rsqrt/pow_" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/deconv3/Reshape_1" out_port_id="0"/>
+		<IR id="424" name="G/deconv3/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN2/moments/SquaredDifference" out_port_id="0"/>
+		<IR id="84" name="G/IN2/moments/SquaredDifference" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN1/add_1" out_port_id="0"/>
+		<IR id="74" name="G/IN1/add_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/conv2/Conv2D" out_port_id="0"/>
+		<IR id="78" name="G/conv2/Conv2D" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_c2/Reshape" out_port_id="0"/>
+		<IR id="183" name="encode/e_c2/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_in2/mul_1" out_port_id="0"/>
+		<IR id="195" name="encode/e_in2/mul_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/FC1/MatMul" out_port_id="0"/>
+		<IR id="142" name="G/FC1/MatMul" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN1/mul" out_port_id="0"/>
+		<IR id="71" name="G/IN1/mul" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_in2/Rsqrt" out_port_id="0"/>
+		<IR id="293" name="encode_1/e_in2/Rsqrt/pow_" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_in2/moments/variance" out_port_id="0"/>
+		<IR id="289" name="encode_1/e_in2/moments/variance" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN_4/add_1" out_port_id="0"/>
+		<IR id="459" name="G/IN_4/add_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN_3/Rsqrt" out_port_id="0"/>
+		<IR id="434" name="G/IN_3/Rsqrt/pow_" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN_1/mul_1" out_port_id="0"/>
+		<IR id="394" name="G/IN_1/mul_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_in2/moments/SquaredDifference" out_port_id="0"/>
+		<IR id="187" name="encode/e_in2/moments/SquaredDifference" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN_1/add_1" out_port_id="0"/>
+		<IR id="396" name="G/IN_1/add_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/Relu_3" out_port_id="0"/>
+		<IR id="338" name="encode_1/Relu_3/Transpose" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN_0/mul" out_port_id="0"/>
+		<IR id="372" name="G/IN_0/mul" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/Tanh" out_port_id="0"/>
+		<IR id="465" name="G/Tanh" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="encode_1/Relu_2" out_port_id="0"/>
+		<IR id="317" name="encode_1/Relu_2" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="encode/Relu_1" out_port_id="0"/>
+		<IR id="198" name="encode/Relu_1" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="G/conv2/Reshape" out_port_id="0"/>
+		<IR id="80" name="G/conv2/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN3/sub" out_port_id="0"/>
+		<IR id="103" name="G/IN3/sub/sub" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN2/sub" out_port_id="0"/>
+		<IR id="83" name="G/IN2/sub/sub" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/output_conv/Reshape" out_port_id="0"/>
+		<IR id="464" name="G/output_conv/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/conv/Reshape" out_port_id="0"/>
+		<IR id="20" name="G/conv/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_in3/moments/SquaredDifference" out_port_id="0"/>
+		<IR id="306" name="encode_1/e_in3/moments/SquaredDifference" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_ful1/MatMul" out_port_id="0"/>
+		<IR id="242" name="encode/e_ful1/MatMul" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/conv/w/read" out_port_id="0"/>
+		<IR id="17" name="G/conv/w/read/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="encode/e_in4/sub" out_port_id="0"/>
+		<IR id="224" name="encode/e_in4/sub/sub" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_c4/Conv2D" out_port_id="0"/>
+		<IR id="219" name="encode/e_c4/Conv2D" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_in4/moments/SquaredDifference" out_port_id="0"/>
+		<IR id="325" name="encode_1/e_in4/moments/SquaredDifference" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN_0/mul_1" out_port_id="0"/>
+		<IR id="373" name="G/IN_0/mul_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/LeakyReLU/Maximum" out_port_id="0"/>
+		<IR id="36" name="LeakyReLU_10016" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_in1/mul_1" out_port_id="0"/>
+		<IR id="176" name="encode/e_in1/mul_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_ful1/add" out_port_id="0"/>
+		<IR id="244" name="encode/e_ful1/add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/deconv1/Reshape_1" out_port_id="0"/>
+		<IR id="382" name="G/deconv1/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_ful1/add" out_port_id="0"/>
+		<IR id="344" name="encode_1/e_ful1/add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN_1/Rsqrt" out_port_id="0"/>
+		<IR id="392" name="G/IN_1/Rsqrt/pow_" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_in2/sub" out_port_id="0"/>
+		<IR id="286" name="encode_1/e_in2/sub/sub" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_in1/Rsqrt" out_port_id="0"/>
+		<IR id="174" name="encode/e_in1/Rsqrt/pow_" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_c1/w/read" out_port_id="0"/>
+		<IR id="261" name="Copy_encode/e_c1/w/read/Output_0/Data_1999_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="G/conv/Conv2D" out_port_id="0"/>
+		<IR id="18" name="G/conv/Conv2D" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="mul" out_port_id="0"/>
+		<IR id="4" name="mul" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_in4/mul" out_port_id="0"/>
+		<IR id="232" name="encode/e_in4/mul" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_c4/w/read" out_port_id="0"/>
+		<IR id="218" name="Copy_encode/e_c4/w/read/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="encode/e_c1/w/read" out_port_id="0"/>
+		<IR id="161" name="Copy_encode/e_c1/w/read/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="G/deconv3/truediv" out_port_id="0"/>
+		<IR id="420" name="G/deconv3/truediv/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="G/IN_3/add_1" out_port_id="0"/>
+		<IR id="438" name="G/IN_3/add_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/LeakyReLU_3/Maximum" out_port_id="0"/>
+		<IR id="96" name="LeakyReLU_10018" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN_0/moments/variance" out_port_id="0"/>
+		<IR id="367" name="G/IN_0/moments/variance" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/Relu" out_port_id="0"/>
+		<IR id="179" name="encode/Relu" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_in3/mul" out_port_id="0"/>
+		<IR id="313" name="encode_1/e_in3/mul" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/deconv4/Reshape_1" out_port_id="0"/>
+		<IR id="445" name="G/deconv4/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_in4/add_1" out_port_id="0"/>
+		<IR id="335" name="encode_1/e_in4/add_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_in3/sub" out_port_id="0"/>
+		<IR id="305" name="encode_1/e_in3/sub/sub" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN3/moments/SquaredDifference" out_port_id="0"/>
+		<IR id="104" name="G/IN3/moments/SquaredDifference" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_in4/moments/variance" out_port_id="0"/>
+		<IR id="327" name="encode_1/e_in4/moments/variance" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/Reshape/shape" out_port_id="0"/>
+		<IR id="239" name="encode/Reshape/Cast_115782_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="G/IN_4/moments/variance" out_port_id="0"/>
+		<IR id="451" name="G/IN_4/moments/variance" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN2/mul_1" out_port_id="0"/>
+		<IR id="92" name="G/IN2/mul_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_in4/sub" out_port_id="0"/>
+		<IR id="324" name="encode_1/e_in4/sub/sub" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_c4/Reshape" out_port_id="0"/>
+		<IR id="321" name="encode_1/e_c4/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN_0/sub" out_port_id="0"/>
+		<IR id="364" name="G/IN_0/sub/sub" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/LeakyReLU_6/Maximum" out_port_id="0"/>
+		<IR id="351" name="LeakyReLU_10017" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/conv4/Reshape" out_port_id="0"/>
+		<IR id="120" name="G/conv4/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_ful1/Matrix/read" out_port_id="0"/>
+		<IR id="341" name="encode_1/e_ful1/MatMul/1_port_transpose11808_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="G/IN4/mul" out_port_id="0"/>
+		<IR id="131" name="G/IN4/mul" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_c3/Reshape" out_port_id="0"/>
+		<IR id="202" name="encode/e_c3/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_in3/Rsqrt" out_port_id="0"/>
+		<IR id="212" name="encode/e_in3/Rsqrt/pow_" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN/sub" out_port_id="0"/>
+		<IR id="23" name="G/IN/sub/sub" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode/e_in2/add_1" out_port_id="0"/>
+		<IR id="197" name="encode/e_in2/add_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_in4/mul_1" out_port_id="0"/>
+		<IR id="333" name="encode_1/e_in4/mul_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="encode_1/e_in1/moments/SquaredDifference" out_port_id="0"/>
+		<IR id="268" name="encode_1/e_in1/moments/SquaredDifference" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/deconv2/conv2d_transpose" out_port_id="0"/>
+		<IR id="401" name="G/deconv2/conv2d_transpose" out_port_id="3"/>
+	</map>
+	<map>
+		<framework name="encode/e_c1/Reshape" out_port_id="0"/>
+		<IR id="164" name="encode/e_c1/BiasAdd/Add" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/conv1/w/read" out_port_id="0"/>
+		<IR id="57" name="G/conv1/w/read/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="G/IN4/mul_1" out_port_id="0"/>
+		<IR id="132" name="G/IN4/mul_1" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN4/moments/variance" out_port_id="0"/>
+		<IR id="126" name="G/IN4/moments/variance" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN3/mul" out_port_id="0"/>
+		<IR id="111" name="G/IN3/mul" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/Reshape_1/shape" out_port_id="0"/>
+		<IR id="352" name="G/Reshape_1/Cast_115772_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="G/IN_1/sub" out_port_id="0"/>
+		<IR id="385" name="G/IN_1/sub/sub" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="G/IN0/moments/variance" out_port_id="0"/>
+		<IR id="46" name="G/IN0/moments/variance" out_port_id="2"/>
+	</map>
+</mapping>
