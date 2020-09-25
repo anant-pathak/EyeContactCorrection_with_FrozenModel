@@ -23,6 +23,7 @@ import numpy as np
 import logging as log
 from openvino.inference_engine import IECore
 import tensorflow as tf  
+import time
 
 
 
@@ -66,7 +67,7 @@ def main(dataset, opt, save_images=True):
     net = ie.read_network(model=model_xml, weights=model_bin)
 
     if "CPU" in args.device:
-        supported_layers = ie.query_network(net, "CPU" ) #CPU "MYRIAD"
+        supported_layers = ie.query_network(net, "CPU" ) #"CPU" OR "MYRIAD"
         not_supported_layers = [l for l in net.layers.keys() if l not in supported_layers]
         if len(not_supported_layers) != 0:
             log.error("Following layers are not supported by the plugin for specified device {}:\n {}".
@@ -143,6 +144,11 @@ def main(dataset, opt, save_images=True):
 
         batch_num = 3451 / opt.batch_size
         # batch_num = 13 #Have made batch size = 1 to skip generation of 
+        #################################
+        # STARTING TIMING 
+        ##################################
+        start_time = time.time() 
+
         for j in range(int(batch_num)):
             real_test_batch, real_eye_pos = sess.run([testbatch, testmask])
             batch_masks, batch_left_eye_pos, batch_right_eye_pos = get_Mask_and_pos(real_eye_pos, opt)
@@ -175,6 +181,11 @@ def main(dataset, opt, save_images=True):
                     imageio.imwrite(image_path, output_concat)
                     # save_images(output_image, '{}/out_1st.jpg'.format("/disk/nGraph/openvino/inference-engine/ie_bridges/python/sample/classification_sample/output"))
                     print('DONE')
+        #################################
+        # ENDING TIMING 
+        ##################################
+        print("\n \n INNER Time elapsed in GazeGan inference using OV of 3451 images = ", time.time() - start_time )
+        
         coord.request_stop()
         coord.join(threads)
 

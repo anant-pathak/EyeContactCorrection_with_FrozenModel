@@ -3,6 +3,7 @@ from __future__ import division
 from __future__ import print_function
 
 import numpy as np
+import time
 import tensorflow as tf
 from Dataset import save_images
 import functools
@@ -92,7 +93,7 @@ class Gaze_GAN(object):
                 tf.image.crop_and_resize(input, boxes=boxes_right, box_ind=list(range(0, shape[0])),
                                     crop_size=[int(shape[-3] / 2), int(shape[-2] / 2)])
 
-    def test(self, freeze_model, save_images):
+    def test(self, freeze_model, flag_save_images=True):
 
         init = tf.global_variables_initializer()
         config = tf.ConfigProto()
@@ -110,13 +111,18 @@ class Gaze_GAN(object):
                 print('Do not exists any checkpoint,Load Failed!')
                 exit()
 
-            _,_,_, testbatch, testmask = self.dataset.input()
-            #testbatch, testmask = self.dataset.custom_test_input()
+            #_,_,_, testbatch, testmask = self.dataset.input()
+            testbatch, testmask = self.dataset.custom_test_input()
             coord = tf.train.Coordinator()
             threads = tf.train.start_queue_runners(sess=sess, coord=coord)
 
-            batch_num = 3451 / self.opt.batch_size
-            # batch_num = 3 #Have made batch size = 1 to skip generation of 
+            #batch_num = 3451 / self.opt.batch_size
+            batch_num = 10 #Have made batch size = 1 to skip generation of 
+            #################################
+            # STARTING TIMING 
+            ##################################
+            start_time = time.time() 
+
             for j in range(int(batch_num)):
                 real_test_batch, real_eye_pos = sess.run([testbatch, testmask])
                 batch_masks, batch_left_eye_pos, batch_right_eye_pos = self.get_Mask_and_pos(real_eye_pos)
@@ -144,23 +150,28 @@ class Gaze_GAN(object):
                 #     arr_plh1 = np.load(file1)
                 
                 output = sess.run([self.x, self.y], feed_dict=f_d)
-                if save_images == True:
-                    if j % 100 == 0 : #Considering the batch_num is 0
-                        output_concat = self.Transpose(np.array([output[0], output[1]]))
-                        #save_images(output_concat, '{}/{:02d}.jpg'.format(self.opt.test_sample_dir, j))
+                if flag_save_images == True:
+                    #if j % 100 == 0 : #Considering the batch_num is 0
+                    output_concat = self.Transpose(np.array([output[0], output[1]]))
+                    #save_images(output_concat, '{}/{:02d}.jpg'.format(self.opt.test_sample_dir, j))
 
-                        ######################
-                        # IF ONLY RESULTANT IMAGE NEEDS TO BE SAVED W/O CONCATINATION: 
-                        # -ANANT
-                        ######################
-                        # output_image = np.reshape(output[1], [256, 256, 3])
-                        # save_images(output_image, '{}/out{}.jpg'.format("/disk/projectEyes/GazeCorrection/log3_25_1/test_sample_dir", j))
+                    ######################
+                    # IF ONLY RESULTANT IMAGE NEEDS TO BE SAVED W/O CONCATINATION: 
+                    # -ANANT
+                    ######################
+                    # output_image = np.reshape(output[1], [256, 256, 3])
+                    # save_images(output_image, '{}/out{}.jpg'.format("/disk/projectEyes/GazeCorrection/log3_25_1/test_sample_dir", j))
 
-                        ######################
-                        # IF CONCAT OF INPUT + OUTPUT NEEDS TO BE SAVED:
-                        # - ANANT
-                        ######################
-                        save_images(output_concat, '{}/{:02d}.jpg'.format("/disk/projectEyes/GazeCorrection/log3_25_1/test_sample_dir", j))
+                    ######################
+                    # IF CONCAT OF INPUT + OUTPUT NEEDS TO BE SAVED:
+                    # - ANANT
+                    ######################
+                    save_images(output_concat, '{}/{:02d}.jpg'.format("/disk/projectEyes/GazeCorrection/log3_25_1/test_sample_dir", j))
+
+            #################################
+            # ENDING TIMING 
+            ##################################
+            print("\n \n INNER Time elapsed in GazeGan inference using TF of 3451 images = ", time.time() - start_time )
 
             if freeze_model == True: 
                 ############################

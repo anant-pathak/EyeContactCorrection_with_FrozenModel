@@ -19,12 +19,12 @@ if __name__ == "__main__":
 
     dataset = Dataset(opt)
     start_time = time.time()
-    gaze_gan = Gaze_GAN(dataset, opt)
-    gaze_gan.build_test_model()
-    gaze_gan.test(freeze_model = False, save_images = False)
-    print("\n \n Time elapsed in GazeGan inference using TF of 3451 images = ", time.time() - start_time )
-    start_time = time.time()
+    # gaze_gan = Gaze_GAN(dataset, opt)
+    # gaze_gan.build_test_model()
+    # gaze_gan.test(freeze_model = False, flag_save_images = True)
+    # print("\n \n OUTER Time elapsed in GazeGan inference using TF of 3451 images = ", time.time() - start_time )
+    #start_time = time.time()
     openVinoGazeGan.main(dataset, opt, save_images = False)
-    print("\n \n Time elapsed in OV inference of 3451 images = ", time.time() - start_time )
+    print("\n \n OUTER Time elapsed in OV inference of 3451 images = ", time.time() - start_time )
     print("\n \n Done both inferences")
     
